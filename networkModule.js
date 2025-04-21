@@ -5,6 +5,8 @@
 const os = require('node:os');
 const interface = os.networkInterfaces();
 
+/*
+
 for (const name in interface) {
     interface[name].forEach( net => {
         console.log('-------------------');
@@ -16,5 +18,26 @@ for (const name in interface) {
     }
     );
 };
+*/
 
 module.exports = {interface};
+
+
+
+/* live review 9.1
+
+function getNetworkInfo() {
+    const interfaces = os.networkInterfaces();
+    const networkInfo = {};
+
+    Object.keys(interfaces).forEach(name => {
+        networkInfo[name] = interfaces[name].map(net => {
+            Family: net.family,
+            Address: net.address,
+            Internal: net.internal
+        });
+    })
+    return networkInfo;
+}
+
+*/

@@ -9,7 +9,7 @@ const fmbytes = os.freemem();
 const fmmb = (fmbytes/(1024*1024)).toFixed(2);
 const cpuCores = os.cpus().length;
 
-console.log(`Name: ${os.type()}, Type: ${os.platform()}, Version: ${os.version()}, Architecture: ${os.arch()}, CPUs: ${cpuCores}, Total Memory: ${tmmb}MB, Free Memory: ${fmmb}MB`);
+//console.log(`Name: ${os.type()}, Type: ${os.platform()}, Version: ${os.version()}, Architecture: ${os.arch()}, CPUs: ${cpuCores}, Total Memory: ${tmmb}MB, Free Memory: ${fmmb}MB`);
 
 module.exports = {
     osType: os.type(),
@@ -20,3 +20,23 @@ module.exports = {
     totalMemoryMB: tmmb,
     freeMemoryMB: fmmb
 };
+
+/* live review 9.1
+
+function getInfo() {
+    return {
+    Name: os.type(),
+    Type: os.platform(),
+    Version: os.version(),
+    Architecture: os.arch(),
+    CPUs: cpuCores,
+    TotalMemory: `${(os.totalmem()/1024/1024).toFixed(2)}MB`,
+    FreeMemory: `${(os.freemem()/1024/1024).toFixed(2)}MB`
+    }
+}
+
+console.log(getInfo());
+
+module.exports = getInfo; -> just the name of the function, without parentheses
+
+*/
